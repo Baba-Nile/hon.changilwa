@@ -1,0 +1,1434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maxwell Changilwa Amugune | MCA Kabiro Ward 2027</title>
+<meta name="description" content="Official supporters community of Maxwell Changilwa Amugune — Incoming MCA Kabiro Ward, Dagoretti North 2027. Reset. Restore. Rebuild Kabiro.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+/* =============================
+   VARIABLES & RESET
+   ============================= */
+:root {
+  --forest: #1a3820;
+  --forest-mid: #245030;
+  --olive: #4a6b2a;
+  --gold: #c8a227;
+  --gold-light: #e8c253;
+  --gold-pale: #f5e8b2;
+  --white: #ffffff;
+  --off-white: #f8f5ef;
+  --gray-soft: #ede9e1;
+  --gray-mid: #8a8575;
+  --text-dark: #181818;
+  --red-ke: #bb1a2e;
+  --shadow-deep: 0 24px 64px rgba(0,0,0,0.38);
+  --shadow-gold: 0 8px 32px rgba(200,162,39,0.22);
+  --tr: all 0.35s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text-dark);
+  background: var(--white);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+button { cursor: pointer; border: none; background: none; font-family: Arial, Helvetica, sans-serif; }
+
+/* =============================
+   SCROLL BAR
+   ============================= */
+#scroll-bar {
+  position: fixed; top: 0; left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--forest-mid));
+  z-index: 9999; width: 0%;
+  transition: width 0.1s;
+}
+
+/* =============================
+   NAVBAR
+   ============================= */
+#navbar {
+  position: fixed; top: 0; left: 0; right: 0;
+  z-index: 800;
+  padding: 1.1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: var(--tr);
+}
+#navbar.scrolled {
+  background: rgba(26,56,32,0.97);
+  backdrop-filter: blur(18px);
+  padding: 0.75rem 2rem;
+  box-shadow: 0 4px 28px rgba(0,0,0,0.28);
+}
+
+.nav-logo { display: flex; align-items: center; gap: 0.75rem; }
+.nav-monogram {
+  width: 44px; height: 44px;
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Pinyon Script', cursive;
+  font-size: 1.6rem;
+  color: var(--forest);
+  flex-shrink: 0;
+  line-height: 1;
+}
+.nav-name { color: var(--white); }
+.nav-name strong { display: block; font-size: 0.9rem; font-weight: 700; letter-spacing: 0.02em; line-height: 1.1; }
+.nav-name span { font-size: 0.62rem; color: var(--gold-light); letter-spacing: 0.12em; text-transform: uppercase; }
+
+.nav-links { display: flex; align-items: center; gap: 1.8rem; list-style: none; }
+.nav-links a {
+  color: rgba(255,255,255,0.82);
+  font-size: 0.8rem; font-weight: 600;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  transition: color 0.3s;
+  position: relative;
+}
+.nav-links a::after {
+  content: ''; position: absolute; bottom: -3px; left: 0;
+  width: 0; height: 1px;
+  background: var(--gold); transition: width 0.3s;
+}
+.nav-links a:hover { color: var(--gold); }
+.nav-links a:hover::after { width: 100%; }
+.nav-donate {
+  background: linear-gradient(135deg, var(--gold), var(--gold-light)) !important;
+  color: var(--forest) !important;
+  padding: 0.5rem 1.25rem;
+  border-radius: 4px; font-weight: 700 !important;
+}
+.nav-donate::after { display: none !important; }
+
+#hamburger {
+  display: none; flex-direction: column; gap: 5px; padding: 4px;
+}
+#hamburger span { display: block; width: 24px; height: 2px; background: var(--white); border-radius: 2px; transition: var(--tr); }
+
+#mobile-nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  background: var(--forest);
+  z-index: 700;
+  padding: 5rem 2rem 2rem;
+  transform: translateY(-100%);
+  transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
+  display: flex; flex-direction: column; gap: 1.25rem;
+}
+#mobile-nav.open { transform: translateY(0); }
+#mobile-nav a {
+  color: rgba(255,255,255,0.85);
+  font-size: 1.1rem; font-weight: 600;
+  letter-spacing: 0.05em; text-transform: uppercase;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding-bottom: 1.25rem;
+}
+#mobile-nav a:last-child { color: var(--gold); border-bottom: none; }
+
+/* =============================
+   HERO
+   ============================= */
+#hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex; align-items: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute; inset: 0;
+  background-image: url('https://scontent.fnbo19-2.fna.fbcdn.net/v/t39.30808-6/659262001_122130558057035197_6137696277740287969_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeGpx5-M7iiHEZoKQ6KMQ4q-zuuFbDVEKynO64VsNUQrKT0HpWpuyJYJgTsQiKoy3D8sa0MTe68KK3n47Hwfa_Dz&_nc_ohc=YEgNvxUaLYQQ7kNvwGZD0uv&_nc_oc=Ado79avSZ98HpbUo-ri99er4aO2IS-ldBSsKMVYkuoilj4k4FBe-XNypyuvNrco0pLBdQ9qy8dXCu-HzGXz4EAtQ&_nc_zt=23&_nc_ht=scontent.fnbo19-2.fna&_nc_gid=vSzh3oMrb4D56C5CrT0maw&_nc_ss=7b2a8&oh=00_Af7RcO9qn2AbeOkrDw1xr_20kF321VtdUAmVeCDHbeLgog&oe=6A14E6FF');
+  background-size: cover;
+  background-position: center 30%;
+  filter: brightness(0.28) saturate(0.65);
+  transform: scale(1.04);
+  animation: zoomBg 28s ease-in-out infinite alternate;
+}
+@keyframes zoomBg {
+  from { transform: scale(1.04); }
+  to   { transform: scale(1.12); }
+}
+
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(26,56,32,0.92) 0%,
+    rgba(36,80,48,0.72) 45%,
+    rgba(74,107,42,0.45) 75%,
+    rgba(200,162,39,0.18) 100%
+  );
+}
+
+.hero-bottom-fade {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 180px;
+  background: linear-gradient(transparent, var(--white));
+}
+
+.hero-content {
+  position: relative; z-index: 2;
+  max-width: 1200px; margin: 0 auto;
+  padding: clamp(6rem, 14vw, 9rem) 2rem clamp(5rem, 10vw, 7rem);
+  width: 100%;
+}
+
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  background: rgba(200,162,39,0.14);
+  border: 1px solid rgba(200,162,39,0.4);
+  color: var(--gold-light);
+  font-size: 0.68rem; font-weight: 700;
+  letter-spacing: 0.28em; text-transform: uppercase;
+  padding: 0.45rem 1.2rem; border-radius: 2px;
+  margin-bottom: 1.75rem;
+  animation: fadeUp 0.8s ease 0.15s both;
+}
+.hero-badge::before { content: ''; width: 18px; height: 1px; background: var(--gold); }
+
+.hero-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.8rem, 7.5vw, 6rem);
+  font-weight: 700;
+  color: var(--white); line-height: 1.0;
+  margin-bottom: 0.4rem;
+  animation: fadeUp 0.8s ease 0.3s both;
+}
+.hero-name em {
+  font-family: 'Pinyon Script', cursive;
+  font-size: 1.1em; font-style: normal;
+  color: var(--gold);
+  display: block; line-height: 1.15;
+}
+
+.hero-title-sub {
+  font-size: clamp(0.8rem, 1.8vw, 1rem);
+  color: rgba(255,255,255,0.65);
+  letter-spacing: 0.12em; text-transform: uppercase;
+  margin-bottom: 2rem;
+  animation: fadeUp 0.8s ease 0.45s both;
+}
+
+.hero-slogan {
+  font-family: Arial Black, Arial, sans-serif;
+  font-size: clamp(1.4rem, 4vw, 2.8rem);
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  color: var(--gold-light);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  animation: fadeUp 0.8s ease 0.6s both;
+}
+.hero-slogan .dot { color: rgba(255,255,255,0.35); margin: 0 0.4rem; }
+
+.hero-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(1rem, 2.2vw, 1.3rem);
+  color: rgba(255,255,255,0.75);
+  max-width: 500px;
+  line-height: 1.65;
+  margin-bottom: 2.5rem;
+  border-left: 3px solid var(--gold);
+  padding-left: 1.25rem;
+  animation: fadeUp 0.8s ease 0.75s both;
+}
+
+.hero-btns {
+  display: flex; flex-wrap: wrap; gap: 0.85rem;
+  animation: fadeUp 0.8s ease 0.9s both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Hero stat strip */
+.hero-stats {
+  display: flex; gap: 2.5rem; margin-top: 3rem; padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  animation: fadeUp 0.8s ease 1.05s both;
+  flex-wrap: wrap;
+}
+.hstat .num {
+  font-family: Arial Black, Arial, sans-serif;
+  font-size: 2rem; font-weight: 900;
+  color: var(--gold); line-height: 1;
+}
+.hstat .lbl {
+  font-size: 0.68rem; color: rgba(255,255,255,0.5);
+  text-transform: uppercase; letter-spacing: 0.1em; margin-top: 0.2rem;
+}
+
+/* =============================
+   BUTTONS
+   ============================= */
+.btn-gold {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  color: var(--forest); font-weight: 700;
+  font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 0.9rem 1.8rem; border-radius: 4px;
+  transition: var(--tr);
+  box-shadow: 0 4px 18px rgba(200,162,39,0.38);
+}
+.btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(200,162,39,0.5); }
+
+.btn-outline {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: transparent; color: var(--white);
+  font-weight: 600; font-size: 0.8rem;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 0.9rem 1.8rem; border-radius: 4px;
+  border: 1px solid rgba(255,255,255,0.35);
+  transition: var(--tr);
+}
+.btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+
+.btn-forest {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--forest); color: var(--white);
+  font-weight: 700; font-size: 0.8rem;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 0.9rem 1.8rem; border-radius: 4px;
+  transition: var(--tr);
+}
+.btn-forest:hover { background: var(--forest-mid); transform: translateY(-2px); }
+
+/* =============================
+   SHARED SECTION STYLES
+   ============================= */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+section { padding: clamp(3.5rem, 7vw, 5.5rem) 0; }
+
+.sec-label {
+  display: inline-flex; align-items: center; gap: 0.75rem;
+  color: var(--olive); font-size: 0.7rem; font-weight: 700;
+  letter-spacing: 0.28em; text-transform: uppercase; margin-bottom: 0.85rem;
+}
+.sec-label::before { content: ''; width: 28px; height: 2px; background: var(--gold); }
+
+.sec-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700; color: var(--forest); line-height: 1.15;
+  margin-bottom: 0.9rem;
+}
+.sec-title span { color: var(--gold); }
+.sec-title.light { color: var(--white); }
+
+.sec-sub { font-size: 0.95rem; color: var(--gray-mid); max-width: 560px; line-height: 1.75; }
+
+/* Reveal animations */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
+.reveal.in { opacity: 1; transform: translateY(0); }
+.d1 { transition-delay: 0.1s; } .d2 { transition-delay: 0.2s; } .d3 { transition-delay: 0.3s; }
+
+/* =============================
+   QUOTE STRIP
+   ============================= */
+#quote-strip {
+  background: var(--forest); padding: 2.5rem 0;
+}
+.qs-inner {
+  display: flex; align-items: center; justify-content: center;
+  gap: 0; flex-wrap: wrap;
+}
+.qs-item {
+  padding: 1rem 2.5rem; text-align: center; flex: 1; min-width: 220px;
+}
+.qs-item blockquote {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic; font-size: 1.05rem;
+  color: rgba(255,255,255,0.82); line-height: 1.55;
+}
+.qs-item blockquote strong { color: var(--gold); font-style: normal; }
+.qs-div { width: 1px; height: 56px; background: rgba(200,162,39,0.28); flex-shrink: 0; }
+
+/* =============================
+   ABOUT
+   ============================= */
+#about { background: var(--off-white); }
+.about-grid {
+  display: grid; grid-template-columns: 1fr 1.1fr;
+  gap: clamp(2rem, 6vw, 5rem); align-items: center;
+}
+.about-img-wrap { position: relative; }
+.about-img-main {
+  border-radius: 12px; overflow: hidden;
+  aspect-ratio: 4/5; box-shadow: var(--shadow-deep);
+}
+.about-img-main img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+
+.about-tag {
+  position: absolute; top: 2rem; left: -1.25rem;
+  background: var(--forest); color: var(--gold-light);
+  padding: 0.65rem 1.1rem; border-radius: 5px;
+  font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  box-shadow: var(--shadow-deep);
+}
+
+.about-accent {
+  position: absolute; bottom: -1.5rem; right: -1.5rem;
+  width: 180px; border-radius: 8px;
+  overflow: hidden; box-shadow: var(--shadow-gold);
+  border: 4px solid var(--white);
+}
+
+.about-text .sec-sub { max-width: 100%; margin-bottom: 1.5rem; }
+
+.pillar-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; margin-top: 1.75rem;
+}
+.pillar {
+  display: flex; align-items: flex-start; gap: 0.75rem;
+  padding: 0.875rem; background: var(--white); border-radius: 8px;
+  border-left: 3px solid var(--gold); transition: var(--tr);
+}
+.pillar:hover { transform: translateY(-2px); box-shadow: var(--shadow-gold); }
+.pillar-icon {
+  width: 34px; height: 34px;
+  background: linear-gradient(135deg, var(--olive), #6a8a40);
+  border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.95rem; flex-shrink: 0;
+}
+.pillar-text strong { display: block; font-size: 0.8rem; font-weight: 700; color: var(--forest); }
+.pillar-text span { font-size: 0.73rem; color: var(--gray-mid); }
+
+/* =============================
+   MANIFESTO
+   ============================= */
+#manifesto { background: var(--white); }
+.manifesto-header { text-align: center; max-width: 640px; margin: 0 auto 3rem; }
+.manifesto-header .sec-label { justify-content: center; }
+.manifesto-header .sec-label::before { display: none; }
+.manifesto-header .sec-sub { margin: 0 auto; text-align: center; }
+
+.manifesto-cards {
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem;
+}
+.mc {
+  background: var(--off-white); border-radius: 12px;
+  overflow: hidden; transition: var(--tr); cursor: pointer;
+}
+.mc:hover { transform: translateY(-5px); box-shadow: 0 16px 48px rgba(0,0,0,0.1); }
+.mc-img { height: 175px; overflow: hidden; }
+.mc-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+.mc:hover .mc-img img { transform: scale(1.07); }
+.mc-body { padding: 1.5rem; }
+.mc-icon {
+  width: 42px; height: 42px;
+  background: linear-gradient(135deg, var(--olive), #6a8a40);
+  border-radius: 8px; display: flex; align-items: center;
+  justify-content: center; font-size: 1.15rem; margin-bottom: 0.875rem;
+}
+.mc-body h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem; font-weight: 700;
+  color: var(--forest); margin-bottom: 0.4rem;
+}
+.mc-body p { font-size: 0.8rem; color: var(--gray-mid); line-height: 1.65; margin-bottom: 0.875rem; }
+.mc-more {
+  font-size: 0.75rem; font-weight: 700; color: var(--olive);
+  letter-spacing: 0.08em; text-transform: uppercase;
+  display: inline-flex; align-items: center; gap: 0.4rem; transition: gap 0.3s;
+}
+.mc:hover .mc-more { gap: 0.8rem; }
+
+/* =============================
+   DONATE SECTION
+   ============================= */
+#donate {
+  background: linear-gradient(135deg, var(--forest) 0%, var(--olive) 60%, var(--forest-mid) 100%);
+  position: relative; overflow: hidden; padding: clamp(4rem, 8vw, 6rem) 0;
+}
+#donate::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: url('https://scontent.fnbo19-2.fna.fbcdn.net/v/t39.30808-6/659262001_122130558057035197_6137696277740287969_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeGpx5-M7iiHEZoKQ6KMQ4q-zuuFbDVEKynO64VsNUQrKT0HpWpuyJYJgTsQiKoy3D8sa0MTe68KK3n47Hwfa_Dz&_nc_ohc=YEgNvxUaLYQQ7kNvwGZD0uv&_nc_oc=Ado79avSZ98HpbUo-ri99er4aO2IS-ldBSsKMVYkuoilj4k4FBe-XNypyuvNrco0pLBdQ9qy8dXCu-HzGXz4EAtQ&_nc_zt=23&_nc_ht=scontent.fnbo19-2.fna&_nc_gid=vSzh3oMrb4D56C5CrT0maw&_nc_ss=7b2a8&oh=00_Af7RcO9qn2AbeOkrDw1xr_20kF321VtdUAmVeCDHbeLgog&oe=6A14E6FF');
+  background-size: cover; background-position: center; opacity: 0.07;
+}
+.donate-inner {
+  position: relative; z-index: 1; max-width: 680px;
+  margin: 0 auto; text-align: center;
+}
+.donate-inner .sec-label { justify-content: center; }
+.donate-inner .sec-label::before { background: rgba(200,162,39,0.5); }
+.donate-inner .sec-sub { color: rgba(255,255,255,0.68); margin: 0 auto 2.5rem; }
+
+.mpesa-card {
+  display: inline-flex; align-items: center; gap: 2rem;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(200,162,39,0.32);
+  border-radius: 10px; padding: 1.25rem 2rem;
+  margin-bottom: 2rem; text-align: left;
+}
+.mpesa-item .mpl { font-size: 0.65rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.15em; }
+.mpesa-item .mpv {
+  font-family: Arial Black, Arial, sans-serif;
+  font-size: 1.8rem; font-weight: 900; color: var(--gold); line-height: 1.1; letter-spacing: 0.04em;
+}
+.donate-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+/* =============================
+   EVENTS
+   ============================= */
+#events { background: var(--gray-soft); }
+.events-grid {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  gap: 1.5rem; margin-top: 2rem;
+}
+.ev-card {
+  border-radius: 10px; overflow: hidden;
+  background: var(--white); border: 1px solid rgba(0,0,0,0.06);
+  transition: var(--tr); cursor: pointer;
+}
+.ev-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(0,0,0,0.1); border-color: var(--gold); }
+.ev-img { height: 158px; overflow: hidden; }
+.ev-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+.ev-card:hover .ev-img img { transform: scale(1.06); }
+.ev-body { padding: 1.25rem; }
+.ev-tag {
+  display: inline-block; background: var(--gold-pale); color: var(--olive);
+  font-size: 0.67rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 0.25rem 0.75rem; border-radius: 20px; margin-bottom: 0.75rem;
+}
+.ev-body h3 { font-size: 0.92rem; font-weight: 700; color: var(--forest); margin-bottom: 0.4rem; }
+.ev-body p { font-size: 0.77rem; color: var(--gray-mid); line-height: 1.55; margin-bottom: 0.875rem; }
+.ev-rsvp { font-size: 0.73rem; font-weight: 700; color: var(--olive); text-transform: uppercase; letter-spacing: 0.08em; transition: color 0.3s; }
+.ev-card:hover .ev-rsvp { color: var(--gold); }
+
+/* =============================
+   GALLERY
+   ============================= */
+#gallery { background: var(--off-white); }
+.gallery-head { text-align: center; max-width: 580px; margin: 0 auto 2rem; }
+.gallery-head .sec-label { justify-content: center; }
+.gallery-head .sec-label::before { display: none; }
+
+.gallery-grid {
+  display: grid; grid-template-columns: repeat(4,1fr);
+  grid-auto-rows: 200px; gap: 0.75rem;
+}
+.gi { border-radius: 8px; overflow: hidden; cursor: pointer; position: relative; }
+.gi:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+.gi:nth-child(5) { grid-column: span 2; }
+.gi img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+.gi:hover img { transform: scale(1.07); }
+.gi-ov {
+  position: absolute; inset: 0;
+  background: rgba(26,56,32,0.58); opacity: 0;
+  display: flex; align-items: center; justify-content: center;
+  transition: opacity 0.3s;
+}
+.gi:hover .gi-ov { opacity: 1; }
+.gi-ov svg { width: 30px; height: 30px; color: var(--white); }
+
+/* =============================
+   CONTACT
+   ============================= */
+#contact { background: var(--white); }
+.contact-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 6vw, 5rem); align-items: start;
+}
+.ci-list { margin-top: 1.75rem; display: flex; flex-direction: column; gap: 0.85rem; }
+.ci {
+  display: flex; align-items: center; gap: 1rem;
+  padding: 0.875rem 1.25rem; background: var(--gray-soft);
+  border-radius: 8px; text-decoration: none; transition: var(--tr);
+}
+.ci:hover { background: var(--gold-pale); transform: translateX(4px); }
+.ci-icon {
+  width: 38px; height: 38px; border-radius: 7px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; flex-shrink: 0;
+}
+.ci-icon.wa { background: #25d366; }
+.ci-icon.ph { background: var(--olive); }
+.ci-icon.em { background: var(--forest); }
+.ci-label { font-size: 0.67rem; color: var(--gray-mid); text-transform: uppercase; letter-spacing: 0.1em; }
+.ci-val { font-size: 0.88rem; font-weight: 600; color: var(--forest); }
+
+.social-row { display: flex; gap: 0.65rem; margin-top: 1.25rem; flex-wrap: wrap; }
+.soc {
+  width: 40px; height: 40px; border-radius: 7px;
+  background: var(--gray-soft); display: flex; align-items: center;
+  justify-content: center; font-size: 0.95rem; color: var(--forest);
+  transition: var(--tr); text-decoration: none;
+}
+.soc:hover { background: var(--forest); color: var(--gold); transform: translateY(-3px); }
+
+.contact-form { display: flex; flex-direction: column; gap: 1rem; }
+.fg { display: flex; flex-direction: column; gap: 0.38rem; }
+.fg label { font-size: 0.75rem; font-weight: 700; color: var(--forest); text-transform: uppercase; letter-spacing: 0.08em; }
+.fc {
+  padding: 0.85rem 1rem;
+  border: 1.5px solid var(--gray-soft); border-radius: 6px;
+  font-family: Arial, Helvetica, sans-serif; font-size: 0.9rem;
+  color: var(--text-dark); background: var(--off-white);
+  outline: none; transition: border-color 0.3s, box-shadow 0.3s;
+}
+.fc:focus { border-color: var(--olive); box-shadow: 0 0 0 3px rgba(74,107,42,0.12); background: var(--white); }
+textarea.fc { resize: vertical; min-height: 115px; }
+.btn-submit {
+  background: linear-gradient(135deg, var(--olive), #6a8a40);
+  color: var(--white); padding: 0.9rem 2rem; border-radius: 6px;
+  font-size: 0.82rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  transition: var(--tr); cursor: pointer; border: none;
+}
+.btn-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(74,107,42,0.35); }
+
+/* =============================
+   FOOTER
+   ============================= */
+footer { background: #111811; color: rgba(255,255,255,0.55); padding: 3rem 0 1.75rem; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3.5rem; margin-bottom: 2rem; }
+.footer-brand p { margin-top: 0.875rem; font-size: 0.82rem; line-height: 1.7; }
+.footer-brand .script-sig {
+  font-family: 'Pinyon Script', cursive; font-size: 2rem; color: var(--gold); line-height: 1.2; margin-bottom: 0.25rem;
+}
+.footer-brand .fw { font-size: 0.78rem; font-weight: 700; color: var(--white); letter-spacing: 0.02em; }
+.footer-brand .fs { font-size: 0.65rem; color: var(--gold-light); letter-spacing: 0.1em; text-transform: uppercase; }
+.fc-head { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.875rem; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.45rem; }
+.footer-col ul a { font-size: 0.8rem; color: rgba(255,255,255,0.48); transition: color 0.3s; }
+.footer-col ul a:hover { color: var(--gold-light); }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.07);
+  padding-top: 1.5rem; display: flex; justify-content: space-between;
+  align-items: center; font-size: 0.72rem; flex-wrap: wrap; gap: 0.5rem;
+}
+.footer-bottom em { color: var(--gold); font-style: normal; }
+
+/* =============================
+   FLOATING WHATSAPP
+   ============================= */
+#wa-float {
+  position: fixed; bottom: 1.75rem; right: 1.75rem; z-index: 700;
+  background: #25d366; color: var(--white);
+  width: 54px; height: 54px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem; box-shadow: 0 4px 18px rgba(37,211,102,0.5);
+  transition: var(--tr); text-decoration: none;
+  animation: waPulse 2.8s ease-in-out infinite;
+}
+#wa-float:hover { transform: scale(1.1); box-shadow: 0 8px 32px rgba(37,211,102,0.65); }
+@keyframes waPulse {
+  0%,100% { box-shadow: 0 4px 18px rgba(37,211,102,0.5); }
+  50%      { box-shadow: 0 4px 32px rgba(37,211,102,0.8); }
+}
+
+/* =============================
+   LIGHTBOX
+   ============================= */
+#lightbox {
+  display: none; position: fixed; inset: 0; z-index: 9000;
+  background: rgba(0,0,0,0.88); align-items: center; justify-content: center;
+}
+#lightbox.open { display: flex; }
+#lightbox img { max-width: 88vw; max-height: 88vh; border-radius: 8px; box-shadow: var(--shadow-deep); }
+.lb-close {
+  position: absolute; top: 1.25rem; right: 1.5rem;
+  color: rgba(255,255,255,0.8); font-size: 1.75rem;
+  cursor: pointer; line-height: 1; transition: color 0.3s;
+}
+.lb-close:hover { color: var(--gold); }
+
+/* =============================
+   MODALS
+   ============================= */
+.modal-ov {
+  display: none; position: fixed; inset: 0; z-index: 8000;
+  background: rgba(0,0,0,0.68); align-items: center; justify-content: center; padding: 1.5rem;
+}
+.modal-ov.open { display: flex; }
+.modal-box {
+  background: var(--white); border-radius: 14px;
+  width: 100%; max-width: 480px; max-height: 90vh;
+  overflow-y: auto; position: relative;
+  animation: slideUp 0.35s ease;
+}
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.mh {
+  padding: 1.75rem 1.75rem 1.25rem;
+  border-bottom: 1px solid var(--gray-soft);
+  display: flex; justify-content: space-between; align-items: flex-start;
+}
+.mh-title { font-size: 1.1rem; font-weight: 700; color: var(--forest); }
+.mh-sub { font-size: 0.78rem; color: var(--gray-mid); margin-top: 0.2rem; }
+.m-close {
+  font-size: 1.1rem; color: var(--gray-mid); cursor: pointer; padding: 0.25rem; line-height: 1;
+  transition: color 0.3s;
+}
+.m-close:hover { color: var(--text-dark); }
+.mb { padding: 1.75rem; }
+
+/* Donation form */
+.amount-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 0.6rem; margin-top: 0.5rem; }
+.abtn {
+  padding: 0.65rem 0.5rem; border-radius: 6px; border: 1.5px solid var(--gray-soft);
+  font-size: 0.8rem; font-weight: 700; color: var(--gray-mid); transition: var(--tr);
+}
+.abtn:hover, .abtn.active {
+  border-color: var(--gold); background: var(--gold-pale); color: var(--forest);
+}
+
+.mpesa-info-box {
+  background: var(--gold-pale); border: 1px solid rgba(200,162,39,0.35);
+  border-radius: 8px; padding: 0.875rem 1rem; margin: 0.875rem 0;
+  display: flex; gap: 2rem;
+}
+.mib-item .mib-lbl { font-size: 0.65rem; color: var(--gray-mid); text-transform: uppercase; letter-spacing: 0.1em; }
+.mib-item .mib-val {
+  font-family: Arial Black, Arial, sans-serif;
+  font-size: 1.4rem; font-weight: 900; color: var(--forest); letter-spacing: 0.04em;
+}
+
+.paystack-note {
+  font-size: 0.7rem; color: var(--gray-mid); text-align: center; margin-top: 0.75rem;
+}
+
+/* Success modal */
+.success-inner { padding: 2.5rem; text-align: center; }
+.success-icon { font-size: 3.5rem; margin-bottom: 1rem; }
+.success-inner h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.7rem; color: var(--forest); margin-bottom: 0.5rem;
+}
+.success-inner p { font-size: 0.88rem; color: var(--gray-mid); line-height: 1.65; }
+
+/* Manifesto modal */
+.ms { padding: 1.25rem 1.75rem; border-bottom: 1px solid var(--gray-soft); }
+.ms:last-child { border-bottom: none; }
+.ms h3 {
+  font-size: 0.9rem; font-weight: 700; color: var(--forest);
+  text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem;
+  display: flex; align-items: center; gap: 0.5rem;
+}
+.ms p { font-size: 0.82rem; color: var(--gray-mid); line-height: 1.65; margin-bottom: 0.5rem; }
+.ms ul { margin: 0.5rem 0 0 1.2rem; }
+.ms ul li { font-size: 0.8rem; color: var(--gray-mid); line-height: 1.7; }
+
+/* =============================
+   RESPONSIVE
+   ============================= */
+@media (max-width: 900px) {
+  .about-grid, .contact-grid { grid-template-columns: 1fr; }
+  .manifesto-cards, .events-grid { grid-template-columns: repeat(2,1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .footer-brand { grid-column: span 2; }
+  .about-accent { right: 0; }
+  .qs-div { display: none; }
+  .nav-links { display: none; }
+  #hamburger { display: flex; }
+}
+@media (max-width: 600px) {
+  .manifesto-cards, .events-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 160px; }
+  .gi:nth-child(1) { grid-column: span 2; }
+  .gi:nth-child(5) { grid-column: span 2; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-brand { grid-column: span 1; }
+  .about-accent { display: none; }
+  .hero-btns { flex-direction: column; }
+  .hero-stats { gap: 1.5rem; }
+  .pillar-grid { grid-template-columns: 1fr; }
+  .amount-grid { grid-template-columns: repeat(2,1fr); }
+  .mpesa-card { flex-direction: column; gap: 1rem; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<div id="scroll-bar"></div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="nav-logo">
+    <div class="nav-monogram">M</div>
+    <div class="nav-name">
+      <strong>Maxwell Changilwa</strong>
+      <span>MCA Kabiro Ward 2027</span>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#manifesto">Manifesto</a></li>
+    <li><a href="#events">Events</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#" class="nav-donate" onclick="openModal('donate-modal');return false;">Donate</a></li>
+  </ul>
+  <button id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div id="mobile-nav">
+  <a href="#about" onclick="closeMenu()">About</a>
+  <a href="#manifesto" onclick="closeMenu()">Manifesto</a>
+  <a href="#events" onclick="closeMenu()">Events</a>
+  <a href="#gallery" onclick="closeMenu()">Gallery</a>
+  <a href="#contact" onclick="closeMenu()">Contact</a>
+  <a href="#" onclick="openModal('donate-modal');closeMenu();return false;">💛 Donate Now</a>
+</div>
+
+<!-- =============================
+     HERO
+     ============================= -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-bottom-fade"></div>
+  <div class="hero-content container">
+    <div class="hero-badge">Official Supporters Community — Kabiro Ward, Nairobi</div>
+    <h1 class="hero-name">
+      Hon Maxwell
+      <em>Changilwa Amugune</em>
+    </h1>
+    <p class="hero-title-sub">Incoming MCA • Kabiro Ward, Dagoretti North • 2027</p>
+    <p class="hero-slogan">
+      RESET <span class="dot">•</span> RESTORE <span class="dot">•</span> REBUILD KABIRO
+    </p>
+    <blockquote class="hero-quote">
+      "I will not sit back and watch my people suffer; with courage, I choose to stand firm in the gap for Kenya and my people in Kabiro Ward."
+    </blockquote>
+    <div class="hero-btns">
+      <button class="btn-gold" onclick="openModal('manifesto-modal')">📜 Read Manifesto</button>
+      <button class="btn-outline" onclick="openModal('donate-modal')">💛 Donate Now</button>
+      <button class="btn-outline" onclick="openModal('volunteer-modal')">🙌 Volunteer</button>
+    </div>
+    <div class="hero-stats">
+      <div class="hstat"><div class="num" data-target="15000">0</div><div class="lbl">Ward Residents</div></div>
+      <div class="hstat"><div class="num" data-target="2027">2020</div><div class="lbl">Election Year</div></div>
+      <div class="hstat"><div class="num" data-target="6">0</div><div class="lbl">Manifesto Pillars</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE STRIP -->
+<div id="quote-strip">
+  <div class="container">
+    <div class="qs-inner">
+      <div class="qs-item">
+        <blockquote>"Kabiro shaped who I am — and I will make it <strong>better</strong> for all."</blockquote>
+      </div>
+      <div class="qs-div"></div>
+      <div class="qs-item">
+        <blockquote>"A safe Kabiro. <strong>Bila political brokers.</strong> Direct service to the people."</blockquote>
+      </div>
+      <div class="qs-div"></div>
+      <div class="qs-item">
+        <blockquote>"Every rough road walked, every resident listened to — <strong>that is why I run.</strong>"</blockquote>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =============================
+     ABOUT
+     ============================= -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-wrap reveal">
+        <div class="about-img-main">
+          <img src="https://scontent.fnbo19-2.fna.fbcdn.net/v/t39.30808-6/659262001_122130558057035197_6137696277740287969_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeGpx5-M7iiHEZoKQ6KMQ4q-zuuFbDVEKynO64VsNUQrKT0HpWpuyJYJgTsQiKoy3D8sa0MTe68KK3n47Hwfa_Dz&_nc_ohc=YEgNvxUaLYQQ7kNvwGZD0uv&_nc_oc=Ado79avSZ98HpbUo-ri99er4aO2IS-ldBSsKMVYkuoilj4k4FBe-XNypyuvNrco0pLBdQ9qy8dXCu-HzGXz4EAtQ&_nc_zt=23&_nc_ht=scontent.fnbo19-2.fna&_nc_gid=vSzh3oMrb4D56C5CrT0maw&_nc_ss=7b2a8&oh=00_Af7RcO9qn2AbeOkrDw1xr_20kF321VtdUAmVeCDHbeLgog&oe=6A14E6FF" alt="Maxwell Changilwa community engagement" loading="lazy">
+        </div>
+        <div class="about-tag">🇰🇪 Kabiro Ward, Nairobi</div>
+        <div class="about-accent">
+          <img src="https://scontent.fnbo19-1.fna.fbcdn.net/v/t39.30808-6/689035637_122133732111035197_3696618764243997341_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=aa7b47&_nc_eui2=AeHOGyaDu-svGzFc-GE_NyPwnfTxwoqE5_yd9PHCioTn_GXRIFQc1TgZD4UjYH2wjD8wSaMqTiPGVICeCn0-9HIk&_nc_ohc=dAHwILEBntwQ7kNvwFofzyf&_nc_oc=AdoOxLjDIaKZZU6S504AnxMa_ff27-kZ-DMIxQPsZ8yRvI8y80IPvbCfhUh3gJ4Px5XIJUsABD48DUzXEBeX8ZeH&_nc_zt=23&_nc_ht=scontent.fnbo19-1.fna&_nc_gid=jgu42Y2FMvBvzq8g0wj-qg&_nc_ss=7b2a8&oh=00_Af5q_hS5_rd8PX8c6g1p4GJTG4Xu8HizNoibMrVewzMUDQ&oe=6A14C4E8" alt="Community" loading="lazy">
+        </div>
+      </div>
+      <div class="about-text reveal d2">
+        <div class="sec-label">About Maxwell</div>
+        <h2 class="sec-title">A Son of <span>Kabiro</span>,<br>Rising for the People</h2>
+        <p class="sec-sub">Born and raised in Kabiro, Maxwell Changilwa Amugune knows every street, every struggle, and every family firsthand. His mission is clear: to Reset, Restore, and Rebuild Kabiro — without political brokers, without middlemen. Just direct, honest service to the residents of Dagoretti North.</p>
+        <p class="sec-sub" style="margin-top:1rem;">From advocating for mjengo workers' rights to walking every rough road in the ward, Maxwell is not a stranger who promises — he is a neighbor who delivers.</p>
+        <div class="pillar-grid">
+          <div class="pillar">
+            <div class="pillar-icon">🛡️</div>
+            <div class="pillar-text"><strong>Security</strong><span>2 police posts for Kabiro</span></div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">🏥</div>
+            <div class="pillar-text"><strong>Healthcare</strong><span>Dispensary + ambulance</span></div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">♻️</div>
+            <div class="pillar-text"><strong>Sanitation</strong><span>TakaSafi TakaKazi</span></div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">💧</div>
+            <div class="pillar-text"><strong>Water</strong><span>Free water Sundays</span></div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">🎓</div>
+            <div class="pillar-text"><strong>Education</strong><span>Equal bursaries for all</span></div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">🏛️</div>
+            <div class="pillar-text"><strong>Response Center</strong><span>Direct community service</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================
+     MANIFESTO
+     ============================= -->
+<section id="manifesto">
+  <div class="container">
+    <div class="manifesto-header reveal">
+      <div class="sec-label">Manifesto</div>
+      <h2 class="sec-title">Six Pillars to <span>Transform</span> Kabiro</h2>
+      <p class="sec-sub">Every promise is grounded in personal experience and real conversations with the people of Kabiro Ward.</p>
+    </div>
+    <div class="manifesto-cards">
+      <div class="mc reveal" onclick="openModal('manifesto-modal')">
+        <div class="mc-img">
+          <img src="https://images.unsplash.com/photo-1559025194-438e683e9a09?w=600&q=80" alt="Security" loading="lazy">
+        </div>
+        <div class="mc-body">
+          <div class="mc-icon">🛡️</div>
+          <h3>Security for Kabiro</h3>
+          <p>Two fully operational police posts to end theft and make Kabiro's streets safe for every resident, day and night.</p>
+          <span class="mc-more">Read More →</span>
+        </div>
+      </div>
+      <div class="mc reveal d1" onclick="openModal('manifesto-modal')">
+        <div class="mc-img">
+          <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&q=80" alt="Healthcare" loading="lazy">
+        </div>
+        <div class="mc-body">
+          <div class="mc-icon">🏥</div>
+          <h3>Healthcare & Emergency</h3>
+          <p>A dispensary with a fully equipped 24/7 emergency ambulance — because no Kabiro resident should travel kilometers for urgent care.</p>
+          <span class="mc-more">Read More →</span>
+        </div>
+      </div>
+      <div class="mc reveal d2" onclick="openModal('manifesto-modal')">
+        <div class="mc-img">
+          <img src="https://images.unsplash.com/photo-1594708767771-a7502209ff51?w=600&q=80" alt="Sanitation" loading="lazy">
+        </div>
+        <div class="mc-body">
+          <div class="mc-icon">♻️</div>
+          <h3>TakaSafi TakaKazi</h3>
+          <p>Vijana wapewe kazi, mtaa ingare. Youth-led sanitation that creates jobs and keeps Kabiro clean — without damaging our roads.</p>
+          <span class="mc-more">Read More →</span>
+        </div>
+      </div>
+      <div class="mc reveal" onclick="openModal('manifesto-modal')">
+        <div class="mc-img">
+          <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&q=80" alt="Education" loading="lazy">
+        </div>
+        <div class="mc-body">
+          <div class="mc-icon">🎓</div>
+          <h3>Education & Bursaries</h3>
+          <p>Equal bursary distribution for all Kabiro voters — your voter's card is your pass. No political gatekeeping on education funds.</p>
+          <span class="mc-more">Read More →</span>
+        </div>
+      </div>
+      <div class="mc reveal d1" onclick="openModal('manifesto-modal')">
+        <div class="mc-img">
+          <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&q=80" alt="Water" loading="lazy">
+        </div>
+        <div class="mc-body">
+          <div class="mc-icon">💧</div>
+          <h3>Free Water Points</h3>
+          <p>Government-subsidized free water every Sunday at Muslim Primary, Kabiro Primary, St Anthony and Raila Estate.</p>
+          <span class="mc-more">Read More →</span>
+        </div>
+      </div>
+      <div class="mc reveal d2" onclick="openModal('manifesto-modal')">
+        <div class="mc-img">
+          <img src="https://images.unsplash.com/photo-1529528744093-6f8abeee5082?w=600&q=80" alt="Community" loading="lazy">
+        </div>
+        <div class="mc-body">
+          <div class="mc-icon">🏛️</div>
+          <h3>Changilwa Response Center</h3>
+          <p>A dedicated community office — always open, no brokers, no middlemen. Your personal requests addressed directly by Maxwell's team.</p>
+          <span class="mc-more">Read More →</span>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:2.5rem;" class="reveal">
+      <button class="btn-forest" onclick="openModal('manifesto-modal')">📜 Read Full Manifesto</button>
+    </div>
+  </div>
+</section>
+
+<!-- =============================
+     DONATE
+     ============================= -->
+<section id="donate">
+  <div class="container">
+    <div class="donate-inner">
+      <div class="sec-label reveal">Support the Movement</div>
+      <h2 class="sec-title light reveal">Your Donation Fuels <span>Kabiro's</span> Future</h2>
+      <p class="sec-sub reveal">Every shilling supports the vision. Track live donations at <strong style="color:var(--gold);">changilwa.org</strong></p>
+      <div class="mpesa-card reveal">
+        <div class="mpesa-item">
+          <div class="mpl">Lipa na M-PESA Paybill</div>
+          <div class="mpv">400200</div>
+        </div>
+        <div style="width:1px;height:48px;background:rgba(200,162,39,0.3);"></div>
+        <div class="mpesa-item">
+          <div class="mpl">Account Number</div>
+          <div class="mpv">1037575</div>
+        </div>
+      </div>
+      <div class="donate-btns reveal">
+        <button class="btn-gold" onclick="openModal('donate-modal')">💛 Donate Online</button>
+        <a class="btn-outline" href="https://wa.me/254700000000?text=Paybill%3A%20400200%20Account%3A%201037575" target="_blank">📱 M-PESA via WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================
+     EVENTS
+     ============================= -->
+<section id="events">
+  <div class="container">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:2rem;flex-wrap:wrap;gap:1rem;">
+      <div>
+        <div class="sec-label reveal">Upcoming Events</div>
+        <h2 class="sec-title reveal">Join Us in <span>Kabiro</span></h2>
+      </div>
+    </div>
+    <div class="events-grid">
+      <div class="ev-card reveal">
+        <div class="ev-img">
+          <img src="https://scontent.fnbo19-2.fna.fbcdn.net/v/t39.30808-6/668550344_122131109691035197_6724953815357883531_n.jpg?stp=dst-jpg_s1080x2048_tt6&_nc_cat=103&ccb=1-7&_nc_sid=aa7b47&_nc_eui2=AeECteHVDdzPUEQGYGR_I2-g_thIWa8V3BT-2EhZrxXcFI53kZzTACtGjZryM6aQCDemqej5Bf5tgbpH3uWJTjD_&_nc_ohc=hk5P0HuWdRMQ7kNvwGY8F5e&_nc_oc=AdoChyo7wf6xQeGY-pSq1B1qG3bMQNqG6CzV9f42jkCSiX3CkuUqZCVhwIIuRx7mcC5NMRoZAcPHzHozT9r6Nu_I&_nc_zt=23&_nc_ht=scontent.fnbo19-2.fna&_nc_gid=ffd0jhYJb1vwyZe8AkeZAw&_nc_ss=7b2a8&oh=00_Af5j0fyPNnA5Jl2Vwl5zIrJ6kY9x65ar1lT-OSFgX14lFw&oe=6A14C0AA" alt="Community Baraza" loading="lazy">
+        </div>
+        <div class="ev-body">
+          <span class="ev-tag">Coming Soon 2025</span>
+          <h3>Kabiro Community Baraza</h3>
+          <p>An open community meeting to discuss key issues facing Kabiro residents. All welcome — no brokers, just the people.</p>
+          <span class="ev-rsvp">RSVP Now →</span>
+        </div>
+      </div>
+      <div class="ev-card reveal d1">
+        <div class="ev-img">
+          <img src="https://images.unsplash.com/photo-1594708767771-a7502209ff51?w=500&q=80" alt="TakaSafi Cleanup" loading="lazy">
+        </div>
+        <div class="ev-body">
+          <span class="ev-tag">TakaSafi Day</span>
+          <h3>TakaSafi TakaKazi Cleanup</h3>
+          <p>Community cleanup in collaboration with local vijana. Let's show what Kabiro looks like when we work together.</p>
+          <span class="ev-rsvp">RSVP Now →</span>
+        </div>
+      </div>
+      <div class="ev-card reveal d2">
+        <div class="ev-img">
+          <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=500&q=80" alt="Youth Forum" loading="lazy">
+        </div>
+        <div class="ev-body">
+          <span class="ev-tag">Youth Forum</span>
+          <h3>Vijana wa Kabiro Forum</h3>
+          <p>A dedicated space for Kabiro youth to voice concerns, share ideas, and shape the 2027 manifesto together.</p>
+          <span class="ev-rsvp">RSVP Now →</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================
+     GALLERY
+     ============================= -->
+<section id="gallery">
+  <div class="container">
+    <div class="gallery-head reveal">
+      <div class="sec-label">Gallery</div>
+      <h2 class="sec-title">Kabiro — Our <span>Community</span></h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="gi reveal" onclick="openLightbox('https://images.unsplash.com/photo-1529528744093-6f8abeee5082?w=1200&q=85')">
+        <img src="https://images.unsplash.com/photo-1529528744093-6f8abeee5082?w=800&q=80" alt="Kabiro community" loading="lazy">
+        <div class="gi-ov"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gi reveal" onclick="openLightbox('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1200&q=85')">
+        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&q=80" alt="Youth empowerment" loading="lazy">
+        <div class="gi-ov"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gi reveal d1" onclick="openLightbox('https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1200&q=85')">
+        <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&q=80" alt="Community volunteers" loading="lazy">
+        <div class="gi-ov"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gi reveal d1" onclick="openLightbox('https://images.unsplash.com/photo-1531164158534-a81a27803a33?w=1200&q=85')">
+        <img src="https://images.unsplash.com/photo-1531164158534-a81a27803a33?w=600&q=80" alt="Nairobi streets" loading="lazy">
+        <div class="gi-ov"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gi reveal d2" onclick="openLightbox('https://images.unsplash.com/photo-1594708767771-a7502209ff51?w=1200&q=85')">
+        <img src="https://images.unsplash.com/photo-1594708767771-a7502209ff51?w=800&q=80" alt="Community cleanup" loading="lazy">
+        <div class="gi-ov"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gi reveal d2" onclick="openLightbox('https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1200&q=85')">
+        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&q=80" alt="Education" loading="lazy">
+        <div class="gi-ov"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================
+     CONTACT
+     ============================= -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="sec-label">Get in Touch</div>
+        <h2 class="sec-title">Connect with <span>Maxwell</span></h2>
+        <p class="sec-sub">The door is always open. Whether you want to share an idea, report an issue, or just say hello — reach out directly.</p>
+        <div class="ci-list">
+          <a href="https://wa.me/254700000000" class="ci" target="_blank">
+            <div class="ci-icon wa">📱</div>
+            <div><div class="ci-label">WhatsApp</div><div class="ci-val">+254 700 000 000</div></div>
+          </a>
+          <a href="tel:+254700000000" class="ci">
+            <div class="ci-icon ph" style="color:#fff;">📞</div>
+            <div><div class="ci-label">Phone</div><div class="ci-val">+254 700 000 000</div></div>
+          </a>
+          <a href="mailto:info@changilwa.org" class="ci">
+            <div class="ci-icon em" style="color:#fff;">✉️</div>
+            <div><div class="ci-label">Email</div><div class="ci-val">info@changilwa.org</div></div>
+          </a>
+        </div>
+        <div class="social-row">
+          <a href="#" class="soc" title="Facebook">📘</a>
+          <a href="#" class="soc" title="Twitter/X">🐦</a>
+          <a href="#" class="soc" title="Instagram">📸</a>
+          <a href="#" class="soc" title="YouTube">▶️</a>
+          <a href="#" class="soc" title="TikTok">🎵</a>
+        </div>
+      </div>
+      <div class="reveal d2">
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--forest);margin-bottom:1.25rem;">Send a Message</h3>
+        <div class="contact-form">
+          <div class="fg">
+            <label>Full Name</label>
+            <input class="fc" type="text" placeholder="Your full name">
+          </div>
+          <div class="fg">
+            <label>Phone / WhatsApp</label>
+            <input class="fc" type="tel" placeholder="+254 7XX XXX XXX">
+          </div>
+          <div class="fg">
+            <label>Message</label>
+            <textarea class="fc" placeholder="Your message, idea, or concern..."></textarea>
+          </div>
+          <button class="btn-submit" onclick="this.textContent='✅ Sent!';setTimeout(()=>this.textContent='Send Message',3000)">Send Message</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="script-sig">Maxwell Changilwa</div>
+        <div class="fw">Maxwell Changilwa Amugune</div>
+        <div class="fs">Incoming MCA • Kabiro Ward 2027</div>
+        <p>"I will not sit back and watch my people suffer; with courage, I choose to stand firm in the gap for Kenya and my people in Kabiro Ward."</p>
+        <div style="margin-top:0.875rem;"><em>changilwa.org</em></div>
+      </div>
+      <div class="footer-col">
+        <div class="fc-head">Quick Links</div>
+        <ul>
+          <li><a href="#about">About Maxwell</a></li>
+          <li><a href="#manifesto">Manifesto</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="fc-head">Take Action</div>
+        <ul>
+          <li><a href="#" onclick="openModal('donate-modal');return false;">Donate Now</a></li>
+          <li><a href="#" onclick="openModal('volunteer-modal');return false;">Volunteer</a></li>
+          <li><a href="https://wa.me/254700000000" target="_blank">WhatsApp Us</a></li>
+          <li><a href="https://wa.me/254700000000?text=Paybill%3A%20400200%20Account%3A%201037575" target="_blank">M-PESA Donate</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Hon Maxwell Changilwa Amugune. All rights reserved.</span>
+      <em>RESET • RESTORE • REBUILD KABIRO</em>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a id="wa-float" href="https://wa.me/254700000000?text=Hello%20Maxwell%20Changilwa%20team%2C%20I%20want%20to%20support%20the%20Kabiro%20movement." target="_blank" title="Chat on WhatsApp">💬</a>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="closeLightbox()">
+  <img id="lb-img" src="" alt="">
+  <div class="lb-close" onclick="closeLightbox()">✕</div>
+</div>
+
+<!-- ==============================
+     DONATE MODAL (simplified)
+     ============================== -->
+<div id="donate-modal" class="modal-ov" onclick="closeModalOverlay(event,'donate-modal')">
+  <div class="modal-box">
+    <div class="mh">
+      <div><div class="mh-title">💛 Support Changilwa's Vision</div><div class="mh-sub">Every donation fuels a better Kabiro</div></div>
+      <div class="m-close" onclick="closeModal('donate-modal')">✕</div>
+    </div>
+    <div class="mb">
+      <!-- Amount -->
+      <div style="margin-bottom:1rem;">
+        <label style="font-size:0.75rem;font-weight:700;color:var(--forest);text-transform:uppercase;letter-spacing:0.08em;display:block;margin-bottom:0.5rem;">Select Amount (KES)</label>
+        <div class="amount-grid" id="amount-grid">
+          <button class="abtn" onclick="setAmt(this,'500')">KES 500</button>
+          <button class="abtn" onclick="setAmt(this,'1000')">KES 1,000</button>
+          <button class="abtn" onclick="setAmt(this,'2500')">KES 2,500</button>
+          <button class="abtn" onclick="setAmt(this,'5000')">KES 5,000</button>
+          <button class="abtn" onclick="setAmt(this,'10000')">KES 10,000</button>
+          <button class="abtn" onclick="setAmt(this,'custom')">Custom</button>
+        </div>
+        <input class="fc" id="custom-amt" type="number" placeholder="Enter amount in KES" style="display:none;margin-top:0.75rem;">
+      </div>
+      <!-- M-PESA info -->
+      <div class="mpesa-info-box">
+        <div class="mib-item"><div class="mib-lbl">Paybill Number</div><div class="mib-val">400200</div></div>
+        <div class="mib-item"><div class="mib-lbl">Account Number</div><div class="mib-val">1037575</div></div>
+      </div>
+      <!-- Name & Phone only -->
+      <div class="fg" style="margin-bottom:0.875rem;">
+        <label>Full Name</label>
+        <input class="fc" type="text" id="d-name" placeholder="Your full name">
+      </div>
+      <div class="fg" style="margin-bottom:1rem;">
+        <label>M-PESA Phone Number</label>
+        <input class="fc" type="tel" id="d-phone" placeholder="+254 7XX XXX XXX">
+      </div>
+      <button class="btn-submit" style="width:100%;" onclick="processDonation()">💛 Complete Donation via Paystack</button>
+      <p class="paystack-note">Secured by Paystack • Your donation is confidential • <a href="https://changilwa.org" style="color:var(--olive);">changilwa.org</a></p>
+    </div>
+  </div>
+</div>
+
+<!-- DONATION SUCCESS -->
+<div id="donate-success" class="modal-ov" onclick="closeModalOverlay(event,'donate-success')">
+  <div class="modal-box" style="max-width:400px;">
+    <div class="success-inner">
+      <div class="success-icon">✅</div>
+      <h2>Asante Sana!</h2>
+      <p>Your donation has been received. You are now part of the movement to Reset, Restore and Rebuild Kabiro. Together we rise!</p>
+      <div style="margin-top:1.75rem;">
+        <button class="btn-forest" onclick="closeModal('donate-success')">Continue</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MANIFESTO MODAL -->
+<div id="manifesto-modal" class="modal-ov" onclick="closeModalOverlay(event,'manifesto-modal')">
+  <div class="modal-box" style="max-width:640px;">
+    <div class="mh">
+      <div><div class="mh-title">📜 Manifesto Yangu</div><div class="mh-sub">Hon Maxwell Changilwa Amugune — Kabiro Ward 2027</div></div>
+      <div class="m-close" onclick="closeModal('manifesto-modal')">✕</div>
+    </div>
+    <div>
+      <div class="ms"><h3>🏗️ Mjengo Community</h3><p>The family that made me who I am. I will never stop advocating for the rights of all site workers. Every mjengo worker in Kabiro deserves dignity, fair pay, and protection.</p></div>
+      <div class="ms"><h3>🛡️ Security</h3><p>We don't just need street lights — we need security personnel on the ground in Kabiro.</p><ul><li>2 operational police posts in Kabiro to end theft</li><li>Pledge to make Kabiro streets safe for every resident</li></ul></div>
+      <div class="ms"><h3>🏥 Healthcare</h3><p>A dispensary with a fully equipped emergency response ambulance. In one meeting I nearly died from food poisoning — all hospitals were closed on a Sunday. <strong>How many die daily due to such?</strong></p><ul><li>Subsidized medication for all residents</li><li>24/7 emergency ambulance</li><li>Fully staffed dispensary in Kabiro</li></ul></div>
+      <div class="ms"><h3>♻️ Sanitation — TakaSafi TakaKazi</h3><p>Vijana wapewe kazi, mtaa ingare. Proper waste management that creates jobs for Kabiro youth.</p><ul><li>Youth employment through sanitation contracts</li><li>Solutions that don't damage our roads</li></ul></div>
+      <div class="ms"><h3>💧 Water</h3><p>Free water every Sunday at Muslim Primary, Kabiro Primary, St Anthony and Raila Estate. The current leader stopped this initiative. <strong>We will restore it.</strong></p></div>
+      <div class="ms"><h3>🎓 Education & Bursaries</h3><p>Equal bursary distribution. Your voter's card is your pass — no political gatekeeping on education funds.</p></div>
+      <div class="ms" style="border-bottom:none;"><h3>🏛️ Changilwa Response Center</h3><p>A dedicated community office — always open, no brokers, no middlemen. Direct service to every Kabiro resident.</p></div>
+      <div style="padding:1.25rem 1.75rem;text-align:center;">
+        <button class="btn-gold" onclick="closeModal('manifesto-modal');openModal('donate-modal')">💛 Support This Vision</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- VOLUNTEER MODAL -->
+<div id="volunteer-modal" class="modal-ov" onclick="closeModalOverlay(event,'volunteer-modal')">
+  <div class="modal-box">
+    <div class="mh">
+      <div><div class="mh-title">🙌 Join the Movement</div><div class="mh-sub">Register as a Changilwa volunteer for Kabiro 2027</div></div>
+      <div class="m-close" onclick="closeModal('volunteer-modal')">✕</div>
+    </div>
+    <div class="mb">
+      <div class="fg" style="margin-bottom:1rem;"><label>Full Name</label><input class="fc" type="text" id="v-name" placeholder="Your full name"></div>
+      <div class="fg" style="margin-bottom:1rem;"><label>Phone Number</label><input class="fc" type="tel" id="v-phone" placeholder="+254 7XX XXX XXX"></div>
+      <div class="fg" style="margin-bottom:1.25rem;">
+        <label>How can you help?</label>
+        <select class="fc" id="v-role">
+          <option value="">Select your role</option>
+          <option>Street Captain — mobilize neighbors</option>
+          <option>Social Media Volunteer</option>
+          <option>Events & Logistics</option>
+          <option>Data & Registration</option>
+          <option>General Volunteer</option>
+        </select>
+      </div>
+      <button class="btn-submit" style="width:100%;" onclick="submitVolunteer()">🙌 Register as Volunteer</button>
+    </div>
+  </div>
+</div>
+
+<!-- SUCCESS MODAL -->
+<div id="success-modal" class="modal-ov" onclick="closeModalOverlay(event,'success-modal')">
+  <div class="modal-box" style="max-width:400px;">
+    <div class="success-inner">
+      <div class="success-icon">🎉</div>
+      <h2 id="s-title">Welcome to the Movement!</h2>
+      <p id="s-msg">Thank you for joining. We will be in touch soon.</p>
+      <div style="margin-top:1.75rem;">
+        <button class="btn-forest" onclick="closeModal('success-modal')">Continue</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================
+     JAVASCRIPT
+     ============================================ -->
+<script>
+// Scroll progress
+window.addEventListener('scroll', () => {
+  const pct = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+  document.getElementById('scroll-bar').style.width = pct + '%';
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// Reveal on scroll
+const revealObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+// Counter animation
+function animateCounters() {
+  document.querySelectorAll('[data-target]').forEach(el => {
+    const target = +el.dataset.target;
+    const start = +el.textContent.replace(/,/g,'');
+    const dur = 1800, step = (target - start) / (dur / 16);
+    let cur = start;
+    const t = setInterval(() => {
+      cur += step;
+      if (cur >= target) { cur = target; clearInterval(t); }
+      el.textContent = Math.floor(cur).toLocaleString();
+    }, 16);
+  });
+}
+const heroObs = new IntersectionObserver(entries => {
+  if (entries[0].isIntersecting) { animateCounters(); heroObs.disconnect(); }
+}, { threshold: 0.3 });
+heroObs.observe(document.getElementById('hero'));
+
+// Mobile menu
+function toggleMenu() { document.getElementById('mobile-nav').classList.toggle('open'); }
+function closeMenu() { document.getElementById('mobile-nav').classList.remove('open'); }
+
+// Modals
+function openModal(id) {
+  document.getElementById(id).classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(id) {
+  document.getElementById(id).classList.remove('open');
+  document.body.style.overflow = '';
+}
+function closeModalOverlay(e, id) { if (e.target === document.getElementById(id)) closeModal(id); }
+
+// Keyboard ESC
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.modal-ov.open').forEach(m => { m.classList.remove('open'); });
+    closeLightbox();
+    document.body.style.overflow = '';
+  }
+});
+
+// Lightbox
+function openLightbox(src) {
+  document.getElementById('lb-img').src = src;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// Donation
+let selAmt = '';
+function setAmt(btn, val) {
+  document.querySelectorAll('.abtn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  selAmt = val;
+  document.getElementById('custom-amt').style.display = val === 'custom' ? 'block' : 'none';
+}
+
+function processDonation() {
+  const name = document.getElementById('d-name').value.trim();
+  const phone = document.getElementById('d-phone').value.trim();
+  const amount = selAmt === 'custom' ? document.getElementById('custom-amt').value : selAmt;
+
+  if (!name) { alert('Please enter your name.'); return; }
+  if (!phone) { alert('Please enter your M-PESA phone number.'); return; }
+  if (!amount) { alert('Please select or enter a donation amount.'); return; }
+
+  // Paystack integration point
+  // In production: call PaystackPop.setup({ key, email, amount, name, phone }) here
+  closeModal('donate-modal');
+  setTimeout(() => openModal('donate-success'), 300);
+}
+
+// Volunteer
+function submitVolunteer() {
+  const name = document.getElementById('v-name').value.trim();
+  const phone = document.getElementById('v-phone').value.trim();
+  const role = document.getElementById('v-role').value;
+  if (!name || !phone || !role) { alert('Please fill in all fields.'); return; }
+  closeModal('volunteer-modal');
+  document.getElementById('s-title').textContent = 'Welcome to the Movement! 🙌';
+  document.getElementById('s-msg').textContent = `Thank you ${name}! Your registration as "${role}" has been received. We will contact you via ${phone} soon.`;
+  setTimeout(() => openModal('success-modal'), 300);
+}
+
+// RSVP
+document.querySelectorAll('.ev-card, .ev-rsvp').forEach(el => {
+  el.addEventListener('click', () => {
+    document.getElementById('s-title').textContent = 'RSVP Received! 📅';
+    document.getElementById('s-msg').textContent = 'Thank you for your RSVP! We will send event details via WhatsApp. See you at the event in Kabiro!';
+    openModal('success-modal');
+  });
+});
+</script>
+</body>
+</html>
